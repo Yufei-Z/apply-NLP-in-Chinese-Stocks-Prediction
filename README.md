@@ -8,8 +8,10 @@
 
 ## existing baseline model
 
-[股市情感分析（股吧）](https://github.com/algosenses/Stock_Market_Sentiment_Analysis)先把文本tokenlize，然后用标注好的中文文本训练（with lab postive or nagative），然后用各种模型训练，最后得到sentiment score，将score 和指数走势plot出来，发现拟合度很高.使用2018年数据，
+[股市情感分析（股吧）](https://github.com/algosenses/Stock_Market_Sentiment_Analysis)先把文本tokenlize，然后用标注好的中文文本训练（with lab postive or nagative），然后用各种模型训练，最后得到sentiment score.使用2018年数据
+
 ![image](https://user-images.githubusercontent.com/39251819/74498044-50b4ed80-4f1a-11ea-8c14-6a319d0878e1.png)
+
 simply use LSTM to predict(like AR model)
 : surprisingly, result is good! corr = 0.82
 ![image](https://user-images.githubusercontent.com/39251819/73824900-f212b400-4835-11ea-969e-6a1700ec8d1f.png)
