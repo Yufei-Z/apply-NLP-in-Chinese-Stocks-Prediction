@@ -29,6 +29,10 @@ There are several reasons why it's unnecessary:
  4. to be continoued
  
 ## Method 2: transfer learning
+use ernie model provided by baidu
+two directions now: 
+ 1. use dataset provided by baidu and may financial dataset.
+ 2. use my financial dataset only.
 ## work in the future...
  1. analyze the earning call scripts, making use of knowledge in behaviour finance.
  
