@@ -17,7 +17,7 @@ Existing baseline model
 >Remark:
 
  1.Although the orignial author did segmamention in raw dataset, at the tokenization step his model still divide a sentence into chars instead of words.
- 2. Although from above picture it fits well, when we foucs on clsoe price change, you can see its prediction power is nearly zero...
+ 2. Although from above picture it fits well, when we foucs on clsoe price change, you can see its prediction power is not so appealing...
  ![image](https://user-images.githubusercontent.com/39251819/75966522-758ef600-5f05-11ea-94bc-1de95708e369.png)
  
  I tried this model and use it to predict the stock '000002.SZ'. Similar as above, results are frustrating😒. Worse still, my correlation is much lower. The reason may be that the training set is too small and not suitable.( the training set is from the forums of index, not of this stock) 
