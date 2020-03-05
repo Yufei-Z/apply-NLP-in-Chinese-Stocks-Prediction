@@ -1,6 +1,6 @@
-# NLP_predict_stock
+# 中文NLP预测股价变化
 
-**Goal**:trying to use NLP tech to predict the stock.
+**Goal**:  trying to use NLP tech to predict the stock. 
 
 ## literature review
 
@@ -14,10 +14,13 @@ Existing baseline model
 
 ![image](https://user-images.githubusercontent.com/39251819/74498044-50b4ed80-4f1a-11ea-8c14-6a319d0878e1.png)
 
-Remark:
- Although the orignial author did segmamention in raw dataset, at the tokenization step his model still divide a sentence into chars instead of words.
+>Remark:
+
+ 1.Although the orignial author did segmamention in raw dataset, at the tokenization step his model still divide a sentence into chars instead of words.
+ 2. Although from above picture it fits well, when we foucs on clsoe price change, you can see its prediction power is nearly zero...
+ ![image](https://user-images.githubusercontent.com/39251819/75966522-758ef600-5f05-11ea-94bc-1de95708e369.png)
  
- I improved this model, obtain larger training set and use it to predict the stock '000002.SZ'. Several models has been trained, among of which linear SVC get best accuaracy of 0.88 in training sets.
+ I tried this model and use it to predict the stock '000002.SZ'. Similar as above, results are frustrating😒. Worse still, my correlation is much lower. The reason may be that the training set is too small and not suitable.( the training set is from the forums of index, not of this stock) 
  
  
  
@@ -36,8 +39,11 @@ use ernie model provided by baidu
 two directions now: 
  1. use dataset provided by baidu and may financial dataset.
  2. use my financial dataset only.
-## work in the future...
- 1. analyze the earning call scripts, making use of knowledge in behaviour finance.
+## work list...
+ 
+- [x] tokenzie before word2vec
+- [x] study the relationship between sentiment score in weekends and the pct_change in next Monday
+- [x] analyze the earning call scripts, making use of knowledge in behaviour finance.
  
  
  ## relevent kaggle competition
