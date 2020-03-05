@@ -15,7 +15,10 @@ Existing baseline model
 ![image](https://user-images.githubusercontent.com/39251819/74498044-50b4ed80-4f1a-11ea-8c14-6a319d0878e1.png)
 
 Remark:
- 1. although the author did segmamention in raw dataset, at the tokenization step his model still divide a sentence into chars instead of words
+ Although the orignial author did segmamention in raw dataset, at the tokenization step his model still divide a sentence into chars instead of words.
+ 
+ I improved this model, obtain larger training set and use it to predict the stock '000002.SZ'. Several models has been trained, among of which linear SVC get best accuaracy of 0.88 in training sets.
+ 
  
  
 
