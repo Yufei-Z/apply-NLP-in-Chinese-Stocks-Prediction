@@ -1,5 +1,7 @@
 # 中文NLP预测股价变化
 
+# Using NLP to trade
+
 >Claim 
 
 Firstly, if you find this helpful or it is rabbish but still get some inspriratoin from here, please give a star to encourge me keep writing!
@@ -61,7 +63,7 @@ A simple strtegy is long if yesterday's sentiment is larger than a threshold (he
  
 >Update : we can build a little bit more complex strategies.
 
-Here I set the first half data as train set and second half as test set. The normal strategy is relatively trival here: long if the sentiment score larger than a threshold (here I set as mean plus 0.5 sd) and sell if smaller mean minus 0.5 sd, after i+1 days. Here i is the look back window, a non negative integer that I want to optimize in train set.
+Here I set the first half data as train set and second half as test set. The normal strategy is relatively trival here: long if the sentiment score larger than a threshold (here I set as mean plus 0.5 sd) and sell if smaller mean minus 0.5 sd, after i+1 days. Here i is the look back window, a non negative integer that I want to optimize in train set. For simplicity i is restricted in [0,1,2,3,4] (also avoid overfitting)
 
 Below is part of the result:
 
