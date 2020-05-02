@@ -2,6 +2,8 @@
 
 >Claim 
 
+Firstly, if you find this helpful or it is rabbish but still get some inspriratoin from here, please give a star to encourge me keep writing!
+
 If you want to get original data for non-bussiness purpose, leave your email in issues
 
 For the code I upload, plz read the comments before you run it. You may need to initialize some tokens in order to use certain packages (tushare, aip). For private concern I didn't share my transfer learning mdoel's model ID, but you can train one easily using [paddlehub](https://github.com/PaddlePaddle/PaddleHub/blob/release/v1.5/docs/tutorial) and easydl. And if you want to use words embedding, download embedding file and set the file path first. I didn't provide it since there are plenty of well-trained embedding models in github already
