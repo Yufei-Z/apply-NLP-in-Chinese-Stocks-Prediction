@@ -1,6 +1,12 @@
 # 中文NLP预测股价变化
 
-**Goal**:  trying to use NLP tech to predict the stock. 
+>Claim 
+
+If you want to get original data for non-bussiness purpose, leave your email in issues
+
+>Goal
+
+trying to use NLP tech to predict the stock. 
 
 ## literature review
 
@@ -8,7 +14,7 @@
 
 
 ## Method 1: train our own model
-Existing baseline model
+Improve existing models 
 
 [股市情感分析（股吧）](https://github.com/algosenses/Stock_Market_Sentiment_Analysis)先把文本tokenlize，然后用标注好的中文文本训练（with lab postive or nagative），然后用各种模型训练，最后得到sentiment score.使用2018年数据
 
@@ -21,7 +27,7 @@ Existing baseline model
  
  I tried this model and use it to predict the stock '000002.SZ'. Similar as above, results are frustrating😒. Worse still, my correlation is much lower. The reason may be that the training set is too small and not suitable.( the training set is from the forums of index, not of this stock) 
  
- 
+ I tried to improve his model and conduct backtest to see its real performance.
  
 
 ### Reflection: is word segamentation necessary?
@@ -44,11 +50,11 @@ The first method achieved 90% accuracy in testset. The I use this model to class
 
 Below is part of the result:
 
-1.600519.SH Moutai
+- 600519.SH Moutai
 ![image](https://user-images.githubusercontent.com/39251819/80866833-8a002c80-8cc3-11ea-9d5e-05ea5237e7b1.png)
 ![image](https://user-images.githubusercontent.com/39251819/80867009-72757380-8cc4-11ea-8c1f-c150a07568c2.png)
 
-2.000063.SZ ZTE
+- 000063.SZ ZTE
 
  i=2  
 ![image](https://user-images.githubusercontent.com/39251819/80867095-dc8e1880-8cc4-11ea-9a37-6cb706e8e965.png)
@@ -61,7 +67,7 @@ i=3
 ![image](https://user-images.githubusercontent.com/39251819/80867443-95088c00-8cc6-11ea-8260-26071d05049b.png) 
 <p align="center">annual return 40% & sharpe 1.8<p align="center">
  
-3. 000858.SH
+- 000858.SH
 
 ![image](https://user-images.githubusercontent.com/39251819/80867590-840c4a80-8cc7-11ea-9ce2-692314baac7a.png)
 
@@ -78,27 +84,35 @@ i=3
  3.Sometimes the stock price go to the opposite direction of market sentiment. Based on my limited knowledge, some possible explanation: 
    - There are lots of informed traders in A markets, therefore if there is some good news, the informed traders would long stock and  stock price will increased before the chaos traders read the good news, then the informed traders will try to sell their stocks and price went down.
    - People discard opposite emotion in forums on purpose (to mislead other traders)
-   -if all participants have long position, no more free cash to buy, when ppl unwind, it triggers others to cut loss or unwinding position in a row, therefore, a stronger momentum
+   - If all participants have long position, no more free cash to buy, when ppl unwind, it triggers others to cut loss or unwinding position in a row, therefore, a stronger momentum
  
- 4 follow 3, I found in liquor industry(wu liangye, moutai) the normal strategy will make profit, where for the rest stocks I have tried 
-it is the contrarian strategy that wins. So may it also depends on the industry? To be verified by investigating more stocks...
+ 4. following 3, I found for liquor industry(wu liangye, moutai) the normal strategy will make profit, where for the rest stocks I have tried it is the contrarian strategy that wins. So may it also depends on the industry? To be verified by investigating more stocks...
 
+## Method 2: direct predict stock price change
+
+output of brainstorm: define independent variable as Y_i= i day's close pct_chg > mean + 1 sd
+
+similar as above, trained models by myself( use ml and dl models) and transfer learning. Both are affected by the imbalancing problem, since most Y = 0. The  f score is very low
+
+>Reflect
+stock price are affected by many factors. If we just use posts and comments to **predict** it, then it is pure data mining and has no economic explanation, which is quite dangerous.
 ## work list...
  
-- [x] tokenzie before word2vec
-- [x] study the relationship between sentiment score in weekends and the pct_change in next Monday
-- [x] analyze the earning call scripts, making use of knowledge in behaviour finance.
+ (updated on 2nd, May)
+ 
+- [x] tokenzie before word2vec  --turns out useless. Reason has been discussed above
+- [] study the relationship between sentiment score in weekends and the pct_change in next Monday --remain for further study
+- [] analyze the earning call scripts, making use of knowledge in behaviour finance. --typical for foreign markets; hard to find for companies in A stock
+- [] make use of the comments under the posts  --technically easy, leave to future when I have spare time
+- [] make use of the read count and reply conut  --how should we make use of this metric? Maybe we can regard them as measure of the post's influence and use them to weight the sentiment socre. Leave to future when I have spare time
+- [] upload more powerful posts scratch code
  
  
- ## relevent kaggle competition
- [predict disaster](https://www.kaggle.com/c/nlp-getting-started/overview)
- keep track of the new kernel and discussion part
+
  
  ## **Appendix**
  ### previous studies which may be helpful
-simply use LSTM to predict(like AR model)
-: surprisingly, result is good! corr = 0.82
-![image](https://user-images.githubusercontent.com/39251819/73824900-f212b400-4835-11ea-969e-6a1700ec8d1f.png)
+
 
 [Sentiment Analysis for Event-Driven Stock Prediction](https://github.com/WayneDW/Sentiment-Analysis-in-Event-Driven-Stock-Price-Movement-Prediction#sentiment-analysis-for-event-driven-stock-prediction): Train a set of Bayesian Convolutional Neural Networks using Stochastic Gradient Langevin Dynamics to obtain more robustness
 
