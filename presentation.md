@@ -116,12 +116,12 @@ stock price are affected by many factors. If we just use posts and comments to *
  (updated on 2nd, May)
  
 - [x] tokenzie before word2vec  --turns out useless. Reason has been discussed above
-- [] study the relationship between sentiment score in weekends and the pct_change in next Monday --remain for further study
-- [] analyze the earning call scripts, making use of knowledge in behaviour finance. --typical for foreign markets; hard to find for companies in A stock
-- [] make use of the comments under the posts  --technically easy, leave to future when I have spare time
-- [] make use of the read count and reply conut  --how should we make use of this metric? Maybe we can regard them as measure of the post's influence and use them to weight the sentiment socre. Leave to future when I have spare time
-- [] make use of the sentiment in weekend. There is no trade in weekend, which means every week there are two day's sentiment score wasted --Maybe we can add them to Monday's sentiment score?
-- [] upload more powerful posts scratch code
+- [ ] study the relationship between sentiment score in weekends and the pct_change in next Monday --remain for further study
+- [ ] analyze the earning call scripts, making use of knowledge in behaviour finance. --typical for foreign markets; hard to find for companies in A stock
+- [ ] make use of the comments under the posts  --technically easy, leave to future when I have spare time
+- [ ] make use of the read count and reply conut  --how should we make use of this metric? Maybe we can regard them as measure of the post's influence and use them to weight the sentiment socre. Leave to future when I have spare time
+- [ ] make use of the sentiment in weekend. There is no trade in weekend, which means every week there are two day's sentiment score wasted --Maybe we can add them to Monday's sentiment score?
+- [ ] upload more powerful posts scratch code
  
  
 
