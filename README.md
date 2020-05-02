@@ -36,6 +36,8 @@ Improve existing models
 update: improve this model , tried embedding and conduct backtest, but still cannot find a stable profit strategy. The model 
 is a bad model: low F1 score.
 ![image](https://user-images.githubusercontent.com/39251819/80869134-2250de00-8cd1-11ea-9641-e41378ee963e.png)
+
+For DL, it is much worse. I have only 10000 labeled text sets, while there are much more parameters for NN, casuing severe overfitting. The loss decayed in train set but diverged in test set
  
 
 ### Reflection: is word segamentation necessary?
