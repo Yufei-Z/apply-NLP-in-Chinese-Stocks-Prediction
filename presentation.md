@@ -4,6 +4,8 @@
 
 If you want to get original data for non-bussiness purpose, leave your email in issues
 
+For the code I upload, plz read the comments before you run it. You may need to initialize some tokens in order to use certain packages (tushare, aip). For private concern I didn't share my transfer learning mdoel's model ID, but you can train one easily using [paddlehub](https://github.com/PaddlePaddle/PaddleHub/blob/release/v1.5/docs/tutorial) and easydl. And if you want to use words embedding, download embedding file and set the file path first. I didn't provide it since there are plenty of well-trained embedding models in github already
+
 >Goal
 
 trying to use NLP tech to predict the stock. 
@@ -27,7 +29,9 @@ Improve existing models
  
  I tried this model and use it to predict the stock '000002.SZ'. Similar as above, results are frustrating😒. Worse still, my correlation is much lower. The reason may be that the training set is too small and not suitable.( the training set is from the forums of index, not of this stock) 
  
- I tried to improve his model and conduct backtest to see its real performance.
+update: improve this model , tried embedding and conduct backtest, but still cannot find a stable profit strategy. The model 
+is a bad model: low F1 score.
+![image](https://user-images.githubusercontent.com/39251819/80869134-2250de00-8cd1-11ea-9641-e41378ee963e.png)
  
 
 ### Reflection: is word segamentation necessary?
@@ -46,7 +50,16 @@ I tried:
  1. use dataset provided by baidu and may financial dataset.
  2. use my financial dataset only.
 
-The first method achieved 90% accuracy in testset. The I use this model to classify sentiment socre and calculate each day's sentiment score. With the sentiment score we can start to construct our strategy. Here I set the first half data as train set and second half as test set. The normal strategy is relatively trival here: long if the sentiment score larger than mean plus 0.5 sd and sell if smaller mean minus 0.5 sd, after i+1 days. Here i is the look back window, a non negative integer that I want to optimize in train set.
+The first method achieved 90% accuracy in testset. The I use this model to classify sentiment socre and calculate each day's sentiment score. With the sentiment score we can start to construct our strategy.
+
+A simple strtegy is long if yesterday's sentiment is larger than a threshold (here I set as mean plus 0.5 sd) and sell if smaller mean minus 0.5 sd
+
+![image](https://user-images.githubusercontent.com/39251819/80868872-b1f58d00-8ccf-11ea-8644-75c0aaf9d39d.png)
+<p align="center">000002.SZ 万科 annual return 40% & sharpe 1.8 <p align="center">
+ 
+>Update : we can build a little bit more complex strategies.
+
+Here I set the first half data as train set and second half as test set. The normal strategy is relatively trival here: long if the sentiment score larger than a threshold (here I set as mean plus 0.5 sd) and sell if smaller mean minus 0.5 sd, after i+1 days. Here i is the look back window, a non negative integer that I want to optimize in train set.
 
 Below is part of the result:
 
@@ -87,8 +100,10 @@ i=3
    - If all participants have long position, no more free cash to buy, when ppl unwind, it triggers others to cut loss or unwinding position in a row, therefore, a stronger momentum
  
  4. following 3, I found for liquor industry(wu liangye, moutai) the normal strategy will make profit, where for the rest stocks I have tried it is the contrarian strategy that wins. So may it also depends on the industry? To be verified by investigating more stocks...
+ 
+ 5. thanks my freind Alex, a CS Phd candidate, helping me build a SOTA model to classify texts. Since this model is accurate enough and his paper is still in review, I just use my transfer learning model here.
 
-## Method 2: direct predict stock price change
+## Method 3: direct predict stock price change
 
 output of brainstorm: define independent variable as Y_i= i day's close pct_chg > mean + 1 sd
 
@@ -105,6 +120,7 @@ stock price are affected by many factors. If we just use posts and comments to *
 - [] analyze the earning call scripts, making use of knowledge in behaviour finance. --typical for foreign markets; hard to find for companies in A stock
 - [] make use of the comments under the posts  --technically easy, leave to future when I have spare time
 - [] make use of the read count and reply conut  --how should we make use of this metric? Maybe we can regard them as measure of the post's influence and use them to weight the sentiment socre. Leave to future when I have spare time
+- [] make use of the sentiment in weekend. There is no trade in weekend, which means every week there are two day's sentiment score wasted --Maybe we can add them to Monday's sentiment score?
 - [] upload more powerful posts scratch code
  
  
