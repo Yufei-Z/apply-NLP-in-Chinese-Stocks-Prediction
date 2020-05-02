@@ -4,7 +4,7 @@
 
 >Claim 
 
-Firstly, if you find this helpful or it is rabbish but still get some inspriratoin from here, please give a star to encourge me keep writing!
+Firstly, if you find this helpful or it is rabbish but still get some inspiration from here, please give a star to encourge me keep writing!
 
 If you want to get original data for non-bussiness purpose, leave your email in issues
 
