@@ -122,6 +122,7 @@ stock price are affected by many factors. If we just use posts and comments to *
  (updated on 2nd, May)
  
 - [x] tokenzie before word2vec  --turns out useless. Reason has been discussed above
+- [ ] preprocess the data -- [increase embedding effeciency](https://www.kaggle.com/christofhenkel/how-to-preprocessing-when-using-embeddings), or use textacy package
 - [ ] study the relationship between sentiment score in weekends and the pct_change in next Monday --remain for further study
 - [ ] analyze the earning call scripts, making use of knowledge in behaviour finance. --typical for foreign markets; hard to find for companies in A stock
 - [ ] make use of the comments under the posts  --technically easy, leave to future when I have spare time
