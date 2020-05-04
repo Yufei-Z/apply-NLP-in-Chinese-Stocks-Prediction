@@ -1,4 +1,4 @@
-# 中文NLP预测股价变化
+# 中文自然语言处理预测股价变化
 
 # Using NLP to trade
 
@@ -130,7 +130,9 @@ stock price are affected by many factors. If we just use posts and comments to *
 - [ ] make use of the sentiment in weekend. There is no trade in weekend, which means every week there are two day's sentiment score wasted --Maybe we can add them to Monday's sentiment score?
 - [ ] upload more powerful posts scratch code
  
- 
+>Update
+
+In this [article](http://epchan.blogspot.com/search?updated-max=2019-12-04T14:41:00-05:00), the author recommend use a simple moving average of sentiment score in past 5 days. He also tried held the stocks longer ( 10 days). The parameters can be optimized in training set
 
  
  ## **Appendix**
