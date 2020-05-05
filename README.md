@@ -4,7 +4,7 @@
 
 >Claim 
 
-Firstly, if you find this helpful or it is rabbish but still get some inspiration from here, please give a star to encourge me keep writing!
+Firstly, if you find this helpful or it is rabbish but still get some inspiration from here, please give a star to encourge me to keep writing!
 
 If you want to get original data for non-bussiness purpose, leave your email in issues
 
@@ -12,7 +12,7 @@ For the code I upload, plz read the comments before you run it. You may need to 
 
 >Goal
 
-trying to use NLP tech to predict the stock. 
+trying to use NLP tech to construct high-sharpe strategy.  It's sharpe instead of annual return matters: because as long as the strategy has high Sharpe, I can use leverage to obtain high return.
 
 ## literature review
 
