@@ -2,7 +2,7 @@
 
 # Using NLP to trade
 
->Claim 
+>Preface
 
 Firstly, if you find this helpful or it is rabbish but still get some inspiration from here, please give a star to encourge me to keep writing!
 
