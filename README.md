@@ -14,6 +14,10 @@ For the code I upload, plz read the comments before you run it. You may need to 
 
 trying to use NLP tech to construct high-sharpe strategy.  It's sharpe instead of annual return matters: because as long as the strategy has high Sharpe, I can use leverage to obtain high return.
 
+>Target
+
+Stock related forums. News may be another popular data source, but access is limited( even the BB terminal in my univeristy can not download news). Here is a related [article](https://medium.com/swlh/outstanding-results-predicting-apple-stock-with-news-using-r-33be5300999f). His model is just a random forest and he use paid-seveice to collect and analyze news. I will try news if I can get access.
+
 ## literature review
 
 [S&P market intelligence](http://pages.marketintelligence.spglobal.com/rs/565-BDO-100/images/MI-Research-NLPLitSurvey-170725.pdf?mkt_tok=eyJpIjoiWlRoa016WmlZVEZpT1RRMyIsInQiOiJ2bklHRUptZFwvMFlDQ3duK3c3VGRPbklqMEpZM3dJVlhEb29GWng0bnlHRVFMbWVBdUlLV1VUQ2R4dW4xaExIYlRkRkVvbXBNT0tHRmFyRHY5V0R1a3VxZUNybkRzYjd5eXNPVzh0bVFLOEhhTndTTzJOY2JrTm5LY2NIWFlwXC9qIn0%3D) mainly foucus on earning call transcript analysis, which can be a direction for further improvement.
@@ -113,7 +117,7 @@ i=3
 
 output of brainstorm: define independent variable as Y_i= i day's close pct_chg > mean + 1 sd
 
-similar as above, trained models by myself( use ml and dl models) and transfer learning. Both are affected by the imbalancing problem, since most Y = 0. The  f score is very low
+similar as above, trained models by myself( use ml and dl models) and transfer learning. Both are affected by the imbalancing problem, since most Y = 0. The model tends to predict Y = 0 for every day and f1 score is very low
 
 >Reflect
 stock price are affected by many factors. If we just use posts and comments to **predict** it, then it is pure data mining and has no economic explanation, which is quite dangerous.
