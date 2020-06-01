@@ -110,10 +110,9 @@ i=3
    - There are lots of informed traders in A markets, therefore if there is some good news, the informed traders would long stock and  stock price will increased before the chaos traders read the good news, then the informed traders will try to sell their stocks and price went down.
    - People discard opposite emotion in forums on purpose (to mislead other traders)
    - If all participants have long position, then tehy don't have more free cash, so when ppl unwind, others tend to cut loss or unwinding position in a row and a stronger momentum happens
+
  
- 4. following 3, I found for liquor industry(wu liangye, moutai) the normal strategy will make profit, where for the rest stocks I have tried it is the contrarian strategy that wins. So may it also depends on the industry? To be verified by investigating more stocks...
- 
- 5. there are some other SOTA model to classify texts. Since this model is accurate enough and his paper is still in review, I just use my transfer learning model here.
+ 4. there are some other SOTA model to classify texts. Since this model is accurate enough and his paper is still in review, I just use my transfer learning model here.
 
 ## Method 3: direct predict stock price change
 
